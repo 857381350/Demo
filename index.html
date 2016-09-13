@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Demos</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+</head>
+<body>
+	<style type="text/css">
+		.back{
+			width:70px;
+			height:30px;
+			float:right;
+			border:1px solid #3A87AD;
+			text-align:center;
+			background: #fff;
+			font-size: 10px;
+			border-radius:6px;
+			color:#3A87AD;
+			-moz-transition:all .3s ease-in-out;
+			-webkit-transition:all .3s ease-in-out;
+			transition:all .3s ease-in-out;
+		}
+		.back:hover{
+			background: #3A87AD;
+			color:#fff;
+		}
+		.demos{
+			display:block;
+			height:250px;
+			cursor:pointer;
+			box-sizing:border-box;
+			-moz-transition:all .3s ease-in-out;
+			-webkit-transition:all .3s ease-in-out;
+			transition:all .3s ease-in-out;
+		}
+		.demos:hover{
+			border:1px solid #3A87AD ;
+			border-radius: 10px;
+			box-shadow: 0 0 10px #3A87AD;
+		}
+		.demos p:last-child{
+			position:absolute;
+			bottom:0px;
+		}
+		.footer{
+			margin-top: 50px;
+			
+			height:50px;
+			line-height:50px; 
+		}
+		.footer span{
+			display:inline-block;
+			margin:0 auto;
+		}
+		.footer a{
+			float:right;
+		
+		}
+	</style>
+	<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<h3 class="page-header">
+				作品集合
+				<button class="back">返回主页</button>
+			</h3>
+		
+			<div class="alert alert-dismissable alert-warning">
+				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				<h4>
+					强烈建议!
+				</h4> 请使用<strong>chrome</strong>或者<strong>Firfox</strong>浏览器浏览本页以获得更好的效果！
+				
+			</div>
+			
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column demos" >
+			
+				<a class="btn" href="3DRotate-Cube/3D旋转立方体.html" target="_blank"><h3>3D旋转立方体</h3></a>
+			
+			<p>
+				一个360°旋转的立方体，鼠标划过有“炸开”的效果,主要技术CSS3，用到CSS3的<i>transform、transforms、transition、animation</i>实现
+			</p>
+			<p>
+				 <a class="btn" href="#" target="_blank">代码地址 »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column demos">
+			
+				<a class="btn" href="new-world/index.html" target="_blank"><h3>new world官网</h3></a>
+			
+			<p>
+				百度前端技术学院作业，利用Html5和css3制作，增加了些CSS3的特效
+			</p>
+			<p>
+				 <a class="btn" href="#" target="_blank">代码地址 »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column demos">
+			
+				<a class="btn" href="轮播图/轮播图.html" target="_blank"><h3>JS轮播图</h3></a>
+			
+			<p>
+				常见的轮播图，可以自动播放和按钮切换，主要使用了javascript的<i>setTimeout()、setInterval()</i>函数设置定时器与清除定时器<i>clearInterval()</i>函数，使用函数递归实现图片滑动切换，采用辅助图片实现图片无限滚动等编程技巧。
+			</p>
+			<p>
+				 <a class="btn" href="#" target="_blank">代码地址 »</a>
+			</p>
+		</div>
+	</div>
+	<div class="row clearfix">
+		<div class="col-md-4 column demos">
+			<h3>
+				电商网站
+			</h3>
+			<p>
+				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+			</p>
+			<p>
+				 <a class="btn" href="#">代码地址 »</a>
+			</p>
+		</div>
+		<div class="col-md-4 column">
+		</div>
+		<div class="col-md-4 column">
+		</div>
+	</div>
+	<div class="row clearfix footer">
+		<div class="col-md-12 column">
+			<span>copyright@2016 琢骨</span>
+			<a href="#top" style="text-decoration:none">back to top</a>
+		</div>
+	</div>
+</div>
+</body>
+</html>
