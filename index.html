@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
+	<meta namen="viewport" content="width=devic-width,user-scalable=no,initial-scale=1.o,maximum-scale=1.0,minimum-scale=1.0"/>
 	<title>Demo</title>
 	<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
 </head>
@@ -43,6 +44,7 @@
 			position:absolute;
 			bottom:0px;
 		}
+		
 		.footer{
 			margin-top: 50px;
 			
@@ -67,7 +69,7 @@
 			</h3>
 		
 			<div class="alert alert-dismissable alert-warning">
-				 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+				 <button type="button" class="close" data-dismiss="alert" id="c">×</button>
 				<h4>
 					强烈建议!
 				</h4> 请使用<strong>chrome</strong>或者<strong>Firfox</strong>浏览器浏览本页以获得更好的效果！
@@ -117,23 +119,31 @@
 				电商网站
 			</h3>
 			<p>
-				Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+				努力完善中。。。。。
 			</p>
 			<p>
 				 <a class="btn" href="#">代码地址 »</a>
 			</p>
 		</div>
-		<div class="col-md-4 column">
+		<div class="col-md-4 column ">
 		</div>
-		<div class="col-md-4 column">
+		<div class="col-md-4 column ">
 		</div>
 	</div>
-	<div class="row clearfix footer">
+<div class="row clearfix footer">
 		<div class="col-md-12 column">
 			<span>copyright@2016 琢骨</span>
-			<a href="#top" style="text-decoration:none">back to top</a>
+			<a href="#top" style="text-decoration:none;">back to top</a>
 		</div>
 	</div>
+	
 </div>
+<script type="text/javascript">
+	var close=document.getElementById("c");
+	
+	c.onclick=function close(){
+			this.parentNode.style.display="none";
+	}
+</script>
 </body>
 </html>
