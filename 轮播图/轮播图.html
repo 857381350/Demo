@@ -117,7 +117,7 @@
 				var time=400;//位移总时间
 				var interval=10;//位移间隔
 				var speed=offset/(time/interval);//每次位移的距离
-					
+					//内部函数
 				function go(){
 					if((speed<0 && parseInt(list.style.left)>newleft)||(speed>0 && parseInt(list.style.left)<newleft)){
 						list.style.left=parseInt(list.style.left) + speed + "px";
