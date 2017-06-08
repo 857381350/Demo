@@ -1,236 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=devic-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"/>
-	<title>Demo</title>
-	<link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=devic-width,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0"/>
+    <title>Demo</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-	<style type="text/css">
+<style type="text/css">
+    .col-md-4.col-xs-12{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .back {
+        width: 70px;
+        height: 30px;
+        float: right;
+        border: 1px solid #3A87AD;
+        text-align: center;
+        background: #fff;
+        font-size: 10px;
+        border-radius: 6px;
+        color: #3A87AD;
+        -moz-transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
 
-		.back{
-			width:70px;
-			height:30px;
-			float:right;
-			border:1px solid #3A87AD;
-			text-align:center;
-			background: #fff;
-			font-size: 10px;
-			border-radius:6px;
-			color:#3A87AD;
-			-moz-transition:all .3s ease-in-out;
-			-webkit-transition:all .3s ease-in-out;
-			transition:all .3s ease-in-out;
-		}
-		.back:hover{
-			background: #3A87AD;
-			color:#fff;
-		}
-		.demos{
-			display:block;
-			height:250px;
-			cursor:pointer;
-			padding: 10px;
-			color: #666;
-			box-sizing:border-box;
-			-moz-transition:all .3s ease-in-out;
-			-webkit-transition:all .3s ease-in-out;
-			transition:all .3s ease-in-out;
-		}
-		.demos:hover{
-			border:1px solid #3A87AD ;
-			border-radius: 10px;
-			box-shadow: 0 0 10px #3A87AD;
-		}
-		.demos:hover a{
-			color: #fff;
-		}
-		.demos p:last-child{
-			position:absolute;
-			bottom:0px;
-		}
-		.top{
-			padding: 0;
-		}
-		.hvr-shutter-in-vertical:hover:before, .hvr-shutter-in-vertical:focus:before, .hvr-shutter-in-vertical:active:before {
-			-webkit-transform: scaleY(0);
-			transform: scaleY(0);
-		}
-		.hvr-shutter-in-vertical:before {
-			content: "";
-			position: absolute;
-			z-index: -1;
-			top: 0;
-			bottom: 0;
-			left: 0;
-			right: 0;
-			background: #fff;
-			-webkit-transform: scaleY(1);
-			transform: scaleY(1);
-			-webkit-transform-origin: 50%;
-			transform-origin: 50%;
-			-webkit-transition-property: transform;
-			transition-property: transform;
-			-webkit-transition-duration: 0.3s;
-			transition-duration: 0.3s;
-			-webkit-transition-timing-function: ease-out;
-			transition-timing-function: ease-out;
-		}
-		.hvr-shutter-in-vertical:hover, .hvr-shutter-in-vertical:focus, .hvr-shutter-in-vertical:active {
-			color: white;
-		}
-		.hvr-shutter-in-vertical {
-			display: inline-block;
-			vertical-align: middle;
-			-webkit-transform: perspective(1px) translateZ(0);
-			transform: perspective(1px) translateZ(0);
-			box-shadow: 0 0 1px transparent;
-			position: relative;
-			background: #2098D1;
-			-webkit-transition-property: color;
-			transition-property: color;
-			-webkit-transition-duration: 0.3s;
-			transition-duration: 0.3s;
-		}
-		.footer{
-			margin-top: 50px;
-			
-			height:50px;
-			line-height:50px; 
-		}
-		.footer span{
-			display:inline-block;
-			margin:0 auto;
-		}
-		.footer a{
-			float:right;
-		
-		}
-	</style>
-	<div class="container">
-	<div class="row top clearfix">
-		<div class="col-md-12 column">
-			<h3 class="page-header">
-				作品集合
-				<a href="http://www.carvebone.com"><button class="back">返回主页</button></a>
-			</h3>
-		
-			<div class="alert alert-dismissable alert-warning">
-				 <button type="button" class="close" data-dismiss="alert" id="c">×</button>
-				<h4>
-					强烈建议!
-				</h4> 请使用<strong>Chrome</strong>或者<strong>Firefox</strong>浏览器浏览本页以获得更好的效果！
-				
-			</div>
-			
-		</div>
-	</div>
-	<div class="row clearfix">
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos" >
+    .back:hover {
+        background: #3A87AD;
+        color: #fff;
+    }
 
-			<a class="btn" href="notepad" target="_blank"><h3>微信商城个人中心</h3></a>
+    .demos {
+        display: block;
+        width: 100%;
+        height: 250px;
+        cursor: pointer;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: #666;
+        border-radius: 10px;
+        box-sizing: border-box;
+        -moz-transition: all .3s ease-in-out;
+        -webkit-transition: all .3s ease-in-out;
+        transition: all .3s ease-in-out;
+    }
 
-			<p>
-				（一个线上项目，关注微信公众号“欢乐券”即可访问。）采用的vue2.0+vue-router+axios+Muse-UI，搭建的一个商城个人中心，来管理日常签到，积分兑换，任务奖励功能
-			</p>
-			<p>
-				<a class="btn btn-warning" href="notepad" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/Personal-Center" target="_blank">代码地址 »</a>
-			</p>
-		</div>
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos" >
-			
-				<a class="btn" href="notepad" target="_blank"><h3>基于vue2.0的本地记事本</h3></a>
-			
-			<p>
-				采用vue2.0+vuex+localStorage+sass+webpack，实现一个本地存储的记事本。兼容PC端和移动端
-			</p>
-			<p>
-				<a class="btn btn-warning" href="notepad" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/notepad-by-vue" target="_blank">代码地址 »</a>
-			</p>
-		</div>
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos" >
-			
-				<a class="btn" href="vue_toolbar/toolbar.html" target="_blank"><h3>一个简单的 Vue Demo</h3></a>
-			
-			<p>
-				常见vue指令 v-model,v-on-v-bind-v-for使用,实现添加人员信息表单功能
-			</p>
-			<p>
-				<a class="btn btn-warning" href="vue_toolbar/toolbar.html" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/vue_toolbar" target="_blank">代码地址 »</a>
-			</p>
-		</div>
+    .demos:hover {
+        border: 1px solid #3A87AD;
+        box-shadow: 0 0 10px #3A87AD;
+    }
 
-	</div>
-	<div class="row clearfix">
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos" >
+    .demos:hover a {
+        color: #fff;
+    }
 
-			<a class="btn" href="3DRotate-Cube/3D旋转立方体.html" target="_blank"><h3>3D旋转立方体</h3></a>
+    .demos p:last-child {
+        position: absolute;
+        bottom: 0px;
+    }
 
-			<p>
-				一个360°旋转的立方体，鼠标划过有“炸开”的效果,主要技术CSS3，用到CSS3的<i>transform、transforms、transition、animation</i>实现
-			</p>
-			<p>
-				<a class="btn btn-warning" href="3DRotate-Cube/3D旋转立方体.html" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/3DRotate-Cube" target="_blank">代码地址 »</a>
-			</p>
-		</div>
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos">
-			
-				<a class="btn" href="new-world/index.html" target="_blank"><h3>new world官网</h3></a>
-			
-			<p>
-				百度前端技术学院作业，利用Html5和css3制作，增加了些CSS3的特效
-			</p>
-			<p>
-				<a class="btn btn-warning" href="new-world/index.html" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/new-world" target="_blank">代码地址 »</a>
-			</p>
-		</div>
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos">
-			
-				<a class="btn" href="轮播图/轮播图.html" target="_blank"><h3>JS轮播图</h3></a>
-			
-			<p>
-				常见的轮播图，可以自动播放和按钮切换，主要使用了javascript的<i>setTimeout()、setInterval()</i>函数设置定时器与清除定时器<i>clearInterval()</i>函数，使用函数递归实现图片滑动切换，采用辅助图片实现图片无限滚动等编程技巧。
-			</p>
-			<p>
-				<a class="btn btn-warning" href="轮播图/轮播图.html" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/轮播图" target="_blank">代码地址 »</a>
-			</p>
-		</div>
+    .top {
+        padding: 0;
+    }
 
-	</div>
-	<div class="row clearfix">
-		<div class="hvr-shutter-in-vertical col-md-4 col-xs-12 column demos">
-			<a class="btn" href="响应式网页/index.html" target="_blank"><h3>简单的响应式网页</h3></a>
+    .hvr-shutter-in-vertical:hover:before, .hvr-shutter-in-vertical:focus:before, .hvr-shutter-in-vertical:active:before {
+        -webkit-transform: scaleY(0);
+        transform: scaleY(0);
+    }
 
-			<p>
-				使用了媒体查询，适配三种屏幕大小，rem为单位
-			</p>
-			<p>
-				<a class="btn btn-warning" href="响应式网页/index.html" target="_blank">预览Demo</a>
-				<a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/响应式网页">代码地址 »</a>
-			</p>
-		</div>
-	</div>
-<div class="row clearfix footer">
-		<div class="col-md-12 col-xs-12 column">
-			<span>copyright@2017 琢骨</span>
-			<a href="#top" style="text-decoration:none;">back to top</a>
-		</div>
-	</div>
-	
+    .hvr-shutter-in-vertical:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #fff;
+        -webkit-transform: scaleY(1);
+        transform: scaleY(1);
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+    }
+
+    .hvr-shutter-in-vertical:hover, .hvr-shutter-in-vertical:focus, .hvr-shutter-in-vertical:active {
+        color: white;
+    }
+
+    .hvr-shutter-in-vertical {
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        background: #2098D1;
+        -webkit-transition-property: color;
+        transition-property: color;
+        -webkit-transition-duration: 0.3s;
+        transition-duration: 0.3s;
+    }
+
+    .footer {
+        margin-top: 50px;
+
+        height: 50px;
+        line-height: 50px;
+    }
+
+    .footer span {
+        display: inline-block;
+        margin: 0 auto;
+    }
+
+    .footer a {
+        float: right;
+
+    }
+</style>
+<div class="container">
+    <div class="row top clearfix">
+        <div class="col-md-12 column">
+            <h3 class="page-header">
+                作品集合
+                <a href="http://www.carvebone.com">
+                    <button class="back">返回主页</button>
+                </a>
+            </h3>
+
+            <div class="alert alert-dismissable alert-warning">
+                <button type="button" class="close" data-dismiss="alert" id="c">×</button>
+                <h4>
+                    强烈建议!
+                </h4> 请使用<strong>Chrome</strong>或者<strong>Firefox</strong>浏览器浏览本页以获得更好的效果！
+
+            </div>
+
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="notepad" target="_blank"><h3>微信商城个人中心</h3></a>
+
+                <p>
+                    （一个线上项目，关注微信公众号“欢乐券”即可访问。）采用的vue2.0+vue-router+axios+Muse-UI，搭建的一个商城个人中心，来管理日常签到，积分兑换，任务奖励功能
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="notepad" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/Personal-Center" target="_blank">代码地址
+                        »</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="notepad" target="_blank"><h3>基于vue2.0的本地记事本</h3></a>
+
+                <p>
+                    采用vue2.0+vuex+localStorage+sass+webpack，实现一个本地存储的记事本。兼容PC端和移动端
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="notepad" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/notepad-by-vue" target="_blank">代码地址
+                        »</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="vue_toolbar/toolbar.html" target="_blank"><h3>一个简单的 Vue Demo</h3></a>
+
+                <p>
+                    常见vue指令 v-model,v-on-v-bind-v-for使用,实现添加人员信息表单功能
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="vue_toolbar/toolbar.html" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/vue_toolbar"
+                       target="_blank">代码地址 »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="3DRotate-Cube/3D旋转立方体.html" target="_blank"><h3>3D旋转立方体</h3></a>
+
+                <p>
+                    一个360°旋转的立方体，鼠标划过有“炸开”的效果,主要技术CSS3，用到CSS3的<i>transform、transforms、transition、animation</i>实现
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="3DRotate-Cube/3D旋转立方体.html" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/3DRotate-Cube"
+                       target="_blank">代码地址 »</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="new-world/index.html" target="_blank"><h3>new world官网</h3></a>
+
+                <p>
+                    百度前端技术学院作业，利用Html5和css3制作，增加了些CSS3的特效
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="new-world/index.html" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/new-world"
+                       target="_blank">代码地址 »</a>
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="轮播图/轮播图.html" target="_blank"><h3>JS轮播图</h3></a>
+
+                <p>
+                    常见的轮播图，可以自动播放和按钮切换，主要使用了javascript的<i>setTimeout()、setInterval()</i>函数设置定时器与清除定时器<i>clearInterval()</i>函数，使用函数递归实现图片滑动切换，采用辅助图片实现图片无限滚动等编程技巧。
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="轮播图/轮播图.html" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/轮播图"
+                       target="_blank">代码地址 »</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="row clearfix">
+        <div class="col-md-4 col-xs-12 column">
+            <div class="hvr-shutter-in-vertical demos">
+                <a class="btn" href="响应式网页/index.html" target="_blank"><h3>简单的响应式网页</h3></a>
+
+                <p>
+                    使用了媒体查询，适配三种屏幕大小，rem为单位
+                </p>
+                <p>
+                    <a class="btn btn-warning" href="响应式网页/index.html" target="_blank">预览Demo</a>
+                    <a class="btn btn-success" href="https://github.com/857381350/Demo/tree/gh-pages/响应式网页">代码地址 »</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row clearfix footer">
+        <div class="col-md-12 col-xs-12 column">
+            <span>copyright@2017 琢骨</span>
+            <a href="#top" style="text-decoration:none;">back to top</a>
+        </div>
+    </div>
+
 </div>
 <script type="text/javascript">
-	var close=document.getElementById("c");
-	
-	c.onclick=function close(){
-			this.parentNode.style.display="none";
-	}
+    var close = document.getElementById("c");
+
+    c.onclick = function close() {
+        this.parentNode.style.display = "none";
+    }
 </script>
 </body>
+</html>
 </html>
