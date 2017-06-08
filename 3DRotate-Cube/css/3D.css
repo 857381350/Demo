@@ -1,0 +1,108 @@
+@keyframes rotate{
+	0%{transform:rotateX(0deg) rotateY(0deg);}
+	100%{transform:rotateX(360deg) rotateY(360deg);}
+
+}
+html{
+	background: linear-gradient(#6FB8CE 0%,#000 85%);
+	height: 100%;
+}
+.wrap{
+	margin-top:150px;
+	perspective:1000px;
+}
+.cube{
+	margin:auto;
+	width:200px;
+	height:200px;
+	position: relative;
+	transform-style:preserve-3d;
+	animation:rotate 10s infinite linear;
+}
+.cube > div{
+	width:100%;
+	height:100%;
+	position:absolute;
+	background-color:#333;
+	opacity:0.8;
+	border:1px #fff solid;
+	color:#fff;
+	font-size: 36px;
+	font-family: "Mincrosoft Yahei";
+	font-weight: bold;
+	text-align: center;
+	line-height: 200px;
+	transition:transform 0.2s ease-in;
+}
+/* 外部方块 */
+.cube .front{
+	transform:translateZ(100px);
+}
+.cube .back{
+	transform:translateZ(-100px) rotateY(180deg);
+}
+.cube .left{
+	transform:rotateY(90deg) translateZ(100px);
+}
+.cube .right{
+	transform:rotateY(-90deg) translateZ(100px);
+}
+.cube .top{
+	transform:rotateX(90deg) translateZ(100px);
+}
+.cube .bottom{
+	transform:rotateX(-90deg) translateZ(100px);
+}
+.cube > span{
+	display: block;
+	width:100px;
+	height:100px;
+	border:1px #000 solid;
+	background-color: #FF784C;
+	position:absolute;
+	top:50px;
+	left: 50px;
+	color:black;
+	font-size:25px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 100px;
+}
+/* 内部小方块 */
+.cube .in-front{
+	transform:translateZ(50px);
+}
+.cube .in-back{
+	transform:translateZ(-50px) rotateY(180deg);
+}
+.cube .in-left{
+	transform:rotateY(90deg) translateZ(50px);
+}
+.cube .in-right{
+	transform:rotateY(-90deg) translateZ(50px);
+}
+.cube .in-top{
+	transform:rotateX(90deg) translateZ(50px);
+}
+.cube .in-bottom{
+	transform:rotateX(90deg) translateZ(-50px);
+}
+/* 鼠标划过效果 */
+.wrap:hover .front{
+	transform:translateZ(200px);
+}
+.wrap:hover .back{
+	transform:translateZ(-200px) rotateY(180deg);
+}
+.wrap:hover .left{
+	transform:rotateY(90deg) translateZ(200px);
+}
+.wrap:hover .right{
+	transform:rotateY(-90deg) translateZ(200px);
+}
+.wrap:hover .top{
+	transform:rotateX(90deg) translateZ(200px);
+}
+.wrap:hover .bottom{
+	transform:rotateX(-90deg) translateZ(200px);
+}

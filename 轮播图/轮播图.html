@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>JS轮播图</title>
+</head>
+<body>
+	<style type="text/css">
+	/*轮播图样式*/
+	*{
+		margin:0;
+		padding:0;
+		text-decoration:none;
+	}
+	#container{
+		width:1000px;
+		height:500px;
+		margin:0 auto;
+		overflow:hidden;
+		top:20px;
+		position:relative;
+	}
+	#list{
+		width:6000px;
+		height:500px;
+		z-index:1;
+		position:absolute;
+	}
+	#list img{
+		float:left;
+	}
+	#button{
+		width: 88px;
+		height: 12px;
+		left: 461px;
+		position: absolute;
+		z-index: 2;
+		bottom: 20px;
+	}
+	#button span{
+		width:10px;
+		height:10px;
+		border:1px solid #fff;
+		border-radius:50%;
+		float:left;
+		cursor:pointer;
+		background:#2F2D2B;
+		margin-right:10px;
+	}
+
+	#button .on{
+		background:#D97E00;
+	}
+	.arrow{
+		width:50px;
+		height:60px;
+		position:absolute;
+		z-index:2;
+		text-align:center;
+		font-size:36px;
+		line-height:60px;
+		color:#fff;
+		font-weight:bold;
+		background:rgba(0,0,0,.2);
+		cursor:pointer;
+		top:220px;
+		transition: all .2s;
+		display:none;
+	}
+	#container:hover .arrow{
+		display:block;
+	}
+	.arrow:hover{
+		background:rgba(0,0,0,.6);
+	}
+	#prev{
+		left:20px;
+	}
+	#next{
+		right:20px;
+	}
+	</style>
+	<!--html结构-->
+	<div id="container">
+		<div id="list" style="left:-1000px;">
+			<img src="images/4.jpg" height="500" width="1000" alt="4">
+			<img src="images/1.jpg" height="500" width="1000" alt="1">
+			<img src="images/2.jpg" height="500" width="1000" alt="2">
+			<img src="images/3.jpg" height="500" width="1000" alt="3">
+			<img src="images/4.jpg" height="500" width="1000" alt="4">
+			<img src="images/1.jpg" height="500" width="1000" alt="1">
+		</div>
+		<div id="button">
+			<span index="1" class="on"></span>
+			<span index="2"></span>
+			<span index="3"></span>
+			<span index="4"></span>
+		</div>
+		<a href="javascript:;" class="arrow" id="prev"><</a>
+		<a href="javascript:;" class="arrow" id="next">></a>
+	</div>
+	<script type="text/javascript">
+		window.onload=function(){
+			var container=document.getElementById("container");
+			var list=document.getElementById("list");
+			var button=document.getElementById("button").getElementsByTagName("span");
+			var prev=document.getElementById("prev");
+			var next=document.getElementById("next");
+			//获取DOM节点
+			var animated=false;
+			var timer;
+			var index=1;
+			//图片切换
+			function animate(offset){
+				animated=true;
+				var newleft=parseInt(list.style.left)+offset;
+				var time=400;//位移总时间
+				var interval=10;//位移间隔
+				var speed=offset/(time/interval);//每次位移的距离
+					//内部函数
+				function go(){
+					if((speed<0 && parseInt(list.style.left)>newleft)||(speed>0 && parseInt(list.style.left)<newleft)){
+						list.style.left=parseInt(list.style.left) + speed + "px";
+						setTimeout(go,interval);//设置定时器，没10毫秒调用一次go函数
+					}
+					else{
+						animated=false;
+				list.style.left=newleft+"px";
+				
+				if(newleft > -1000){
+					list.style.left = -4000+"px";//图片到最后一张附属图时归位到第四张
+						}
+				if(newleft < -4000){
+					list.style.left = -1000+"px";//图片到第四张附属图时归位到第一张
+						}
+					}
+				}
+				go();
+			}
+			//向右自动切换图片
+			function autoPlay(){
+				timer=setInterval(function (){
+					next.onclick();},2000);//设置成没2000毫秒调用一次点击next事件
+				}
+			//停止自动切换	
+			function stop(){
+				clearInterval(timer);//清除定时器
+			}
+			//鼠标划出时执行auto
+			container.onmouseout=autoPlay;
+			//鼠标划入时执行stop
+			container.onmouseover=stop;
+			//初始状态为自定切换
+			autoPlay();
+			//小圆点显示
+			function ShowButton() {
+				for (var i = 0; i < button.length; i++) {//遍历所有button按钮
+					if(button[i].className=="on"){
+						button[i].className="";
+						break;//清空所有button样式
+					}
+				};
+				button[index-1].className="on";//给点击的button添加样式
+			}
+			//点击下一个动作
+			next.onclick=function() {
+				if (index==4) {
+					index=1;
+				}
+				else{index+=1;}			
+				
+				ShowButton();
+				if(!animated){
+				animate(-1000);}
+			}
+			//点击上一个动作
+			prev.onclick=function() {
+				if (index==1) {
+					index=4;
+				}
+				else{index-=1;}	
+				
+				ShowButton();
+				if(!animated){
+				animate(1000);}
+			}
+			
+			//点击小圆点切换图片
+			for (var i = 0; i < button.length; i++) {
+				button[i].onclick=function () {
+					var myindex=parseInt(this.getAttribute("index"));
+					var offset=-1000*(myindex-index);//计算点击的目标图和目前所在图的距离
+					index=myindex;//index更换为点击的图片index值
+					if(!animated){
+					animate(offset);}
+					ShowButton();
+				}
+			};
+
+		}
+	</script>
+</body>
+</html>
